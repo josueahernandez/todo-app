@@ -74,13 +74,24 @@ angular
     self.updateTodo = function(todo) {
       var updateTodo = {
         complete: todocompleted,
-      }
-      todo.update(self.currentUser.id, todo.id, update.id)
-      .then(function ();
+        name: todo.name,
+        archived: todoarchives,
+      };
 
-    })
-      .catch(function (err) {
-        console.log(err);
-      });
+      todo.update(self.currentUser.id, todo.id, updatedTodo)
+        .then(function () {
+          readTodos();
+        })
+
+        .catch(function (err) {
+          console.log(err);
+        });
     };
+
+    self.archiveTodo = function(todo) {
+      todo.archived = true;
+      self.updateTodo(todo);
+    };
+
+  },
 ]);
