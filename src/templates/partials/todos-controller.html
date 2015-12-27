@@ -4,7 +4,7 @@
 
   <ul class="list-group">
     <li class="list-group-item" ng-repeat="todoItem in todo.todos | filter:todo.selectedFilter">
-      <input type="checkbox" ng-model="todoItem.completed ng-change="todo.updateTodo(todoItems)
+      <input type="checkbox" ng-model="todoItem.completed" ng-change="todo.updateTodo(todoItems)"/>
       <span ng-class="{ strikethrough: todoItems }">{{ todoItem.name }}</span>
       <button class="btn btn-xs btn-danger" ng-click="todo.archiveTodo(todoItem)">
         <span class="glyphicon glyphicon-remove"></span>
